@@ -18,7 +18,7 @@ request.addEventListener("load",function(){
   title.innerHTML=`${obj.name} (@${obj.login})`;
   followers.innerHTML="Followers :"+obj.followers;
   following.innerHTML="following :"+obj.following;
-  repos.innerHTML="Repos :"+obj.repos;
+  repos.innerHTML="Repos :"+obj.public_repos;
 })
 request.send();
 
@@ -29,7 +29,7 @@ reporequest.addEventListener("load",function(){
  obj.forEach(function(repo){
    let span=document.createElement("Span");
    span.setAttribute('id','repo');
-   span.innerHTML=repo.name;
+   span.innerHTML=repo.name+"<br>";
    reposlist.appendChild(span);
  })
 })
